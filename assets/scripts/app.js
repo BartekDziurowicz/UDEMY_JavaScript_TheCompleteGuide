@@ -2,8 +2,8 @@ const defaultResult = 0;
 let currentResult = defaultResult;
 
 function add() {
-    const result = currentResult + userInput.value;
-    outputResult(currentResult, calculationDescription);
+    currentResult = currentResult + parseInt(userInput.value);   
+    outputResult(currentResult, '');
 }
 
 addBtn.addEventListener('click', add);
