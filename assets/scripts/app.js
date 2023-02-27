@@ -22,21 +22,28 @@ const writeToLog = (operationIdentifier, prevResult, operationNumber, newResult)
     console.log(logEntries);
 }
 
-const add = () => {
+const calculateResult = (calculationType) => {
     const enteredNumber = getUserNumberInput();
     const initialResult = currentResult;
+    let mathOperator;
+    if (calculationType === 'ADD') {
+        currentResult += enteredNumber;
+        mathOperator = '+';
+    } else {
+        currentResult -= enteredNumber;
+        mathOperator = '-';
+    }
     currentResult += enteredNumber;   
-    createAndWriteOutput('+', initialResult, enteredNumber);
-    writeToLog('ADD', initialResult, enteredNumber, currentResult);
+    createAndWriteOutput(mathOperator, initialResult, enteredNumber);
+    writeToLog(calculationType, initialResult, enteredNumber, currentResult);
+}
 
+const add = () => {
+    calculateResult('ADD');
 }
 
 const subtract = () => {
-    const enteredNumber = getUserNumberInput();
-    const initialResult = currentResult;
-    currentResult -= enteredNumber;   
-    createAndWriteOutput('-', initialResult, enteredNumber);
-    writeToLog('SUBTRACT', initialResult, enteredNumber, currentResult);
+    calculateResult('SUBTRACT');
 }
 
 const multiply = () => {
