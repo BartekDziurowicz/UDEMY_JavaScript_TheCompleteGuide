@@ -170,8 +170,14 @@ function healPlayerHandler() {
 }
 
 function printLogHandler() {
+  let i = 0;
   for (const log of battleLog) {
-    console.log(log);
+    console.log(`#${i}`);
+    for (const key in log) {
+      console.log(key);
+      console.log(log[key]);
+    }
+    i++;
   };
 }
 
