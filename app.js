@@ -22,3 +22,15 @@ const listItems = document.querySelectorAll('li');
 const domArray = Array.from(listItems);
 console.log(domArray);
 
+
+
+// manage arrays and data
+const hobbies = ['sport', 'history'];
+hobbies.push('reading'); //add element at the end
+hobbies.unshift('cooking'); //add element at first place
+hobbies.pop(); //remove last element
+hobbies.shift(); //remove first element
+
+hobbies[1] = 'new item'; //repalce element at index 1
+hobbies[18] = 'item18'; //add element at index 18 and empty (undefined) indexes between array.length and 18
+
