@@ -34,3 +34,11 @@ hobbies.shift(); //remove first element
 hobbies[1] = 'new item'; //repalce element at index 1
 hobbies[18] = 'item18'; //add element at index 18 and empty (undefined) indexes between array.length and 18
 
+
+
+// splice - only on arrays, not all iterables
+hobbies.splice(0, 0); // from index 0 delete 0 elemets
+hobbies.splice(1, 0, 'new item'); //from index 1 delete 0 elemetns and replace with new element, can be many alements as you wish
+hobbies.splice(0); // delete all items from index 0
+hobbies.splice(-1, 1); // delete 1 element from index array.lenght-1
+
