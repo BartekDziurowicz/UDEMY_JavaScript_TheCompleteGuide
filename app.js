@@ -98,3 +98,18 @@ taxAdjusted2 = prices.map( (price, idx, prices) => {
     const priceObj = { index: idx, taxAdjPrice: price * (1 + tax)};
     return priceObj;
 } );
+
+
+// sorted and reverse
+const sortedNumbers = hobbies.sort(); // sort converts everything to string, so 10 will be before 3
+const sortedNumbers2 = hobbies.sort( (a, b) => {
+    if ( a>b ) {
+        return 1;
+    } else if ( a===b ) {
+        return 0
+    } else {
+        return -1;
+    }
+}); // fixed logic
+
+const reverseNumbers = sortedNumbers2.reverse(); //reverse order in array
