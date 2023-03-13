@@ -70,3 +70,14 @@ const maxindex = data.findIndex( (person, idx, persons) => {
 
 // included - check if is included
 console.log(slicearray.includes(2));
+
+
+
+// forEach method - takes up to 3 args
+const prices = [4.20, 2.12, 3.98];
+const tax = 0.19;
+const taxAdjustedPrices = [];
+
+prices.forEach( (price, idx, prices) => {
+    taxAdjustedPrices.push(price * (1 + tax));
+} );
