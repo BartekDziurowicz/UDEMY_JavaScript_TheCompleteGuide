@@ -67,3 +67,6 @@ const bartek = data.find( (person, idx, persons) => {
 const maxindex = data.findIndex( (person, idx, persons) => {
     return person.name === 'Bartek';
 } );
+
+// included - check if is included
+console.log(slicearray.includes(2));
