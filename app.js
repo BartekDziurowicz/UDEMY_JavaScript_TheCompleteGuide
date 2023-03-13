@@ -48,3 +48,6 @@ hobbies.splice(-1, 1); // delete 1 element from index array.lenght-1
 const slicearray = [1, 2, 3];
 const slicedarray = slicearray.slice(); // make a copy of array in ne place in memory - different reference
 const slicedarray2 = slicearray.slice(1, 2); // make copy of added range from 1 to 2 (not included)
+
+// concat - ad array or arrays to existing array, make a copy not reference old array to new one
+const concatedArray = slicearray.concat(hobbies);
