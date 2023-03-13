@@ -55,3 +55,15 @@ const concatedArray = slicearray.concat(hobbies);
 // indexOf and lastIndexOf - working with primitive values
 const indexof = slicedarray.indexOf(3); // return 2, while number 3 have index 2 in array, first index starting from left
 const lastindexof = slicearray.lastIndexOf(3); // first index starting from right
+
+// find() method - working on prymitive and referenced types
+const data = [{name: Bartek}, {name: Marian}];
+const bartek = data.find( (person, idx, persons) => {
+    return person.name === 'Bartek';
+} ); //up to 3 arguments (person - single element of array, not required are idx=index and persons - whole array), will stop after first hit from left
+// will return real object, not copied
+
+// findIndex - will return index of the object
+const maxindex = data.findIndex( (person, idx, persons) => {
+    return person.name === 'Bartek';
+} );
