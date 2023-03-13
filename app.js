@@ -51,3 +51,7 @@ const slicedarray2 = slicearray.slice(1, 2); // make copy of added range from 1 
 
 // concat - ad array or arrays to existing array, make a copy not reference old array to new one
 const concatedArray = slicearray.concat(hobbies);
+
+// indexOf and lastIndexOf - working with primitive values
+const indexof = slicedarray.indexOf(3); // return 2, while number 3 have index 2 in array, first index starting from left
+const lastindexof = slicearray.lastIndexOf(3); // first index starting from right
