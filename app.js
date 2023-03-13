@@ -81,3 +81,20 @@ const taxAdjustedPrices = [];
 prices.forEach( (price, idx, prices) => {
     taxAdjustedPrices.push(price * (1 + tax));
 } );
+
+
+// transforming data with map()
+const prices2 = [4.20, 2.12, 3.98];
+const tax2 = 0.19;
+const taxAdjustedPrices2 = [];
+
+prices.map( (price, idx, prices) => {
+    const priceObj = { index: idx, taxAdjPrice: price * (1 + tax)};
+    taxAdjustedPrices2.push(priceObj);
+} );
+
+// or
+taxAdjusted2 = prices.map( (price, idx, prices) => {
+    const priceObj = { index: idx, taxAdjPrice: price * (1 + tax)};
+    return priceObj;
+} );
