@@ -122,3 +122,15 @@ const filteredArray = prices3.filter( (price, index, prices) => { // will return
 
 // with shorter arrow func:
 const filteredArray2 = prices3.filter( p => p > 6 );
+
+
+
+// reduce method - reduce array to simple value
+let sum = 0;
+prices3.forEach( (price) => {
+    sum += price;
+} );
+
+const sum2 = prices3.reduce( (prevValue, curValue, curIndex, prices) => {
+    return prevValue + curValue;
+}, 0); // 0 is initial value because prv is not exist at this moment
