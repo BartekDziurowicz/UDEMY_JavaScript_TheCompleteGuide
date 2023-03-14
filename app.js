@@ -134,3 +134,11 @@ prices3.forEach( (price) => {
 const sum2 = prices3.reduce( (prevValue, curValue, curIndex, prices) => {
     return prevValue + curValue;
 }, 0); // 0 is initial value because prv is not exist at this moment
+
+
+// arrays and sstrings - split and join
+const someData = 'new york;10.99;2000';
+const transformedData = data.split(';'); // will return array with 3 elemets
+
+const nameFramgents = ['Bar', 'tek'];
+const name = nameFramgents.join(''); // will return one string from array
