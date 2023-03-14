@@ -142,3 +142,11 @@ const transformedData = data.split(';'); // will return array with 3 elemets
 
 const nameFramgents = ['Bar', 'tek'];
 const name = nameFramgents.join(''); // will return one string from array
+
+
+// desctructuring
+const nameData = ['Bartosz', 'Dziurowicz'];
+// const fName = namesData[0];
+// const lName = names[1];
+
+const [ fName, lName ] = nameData; // will pull out elemts into variables
