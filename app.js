@@ -113,3 +113,12 @@ const sortedNumbers2 = hobbies.sort( (a, b) => {
 }); // fixed logic
 
 const reverseNumbers = sortedNumbers2.reverse(); //reverse order in array
+
+// filtering
+const prices3 = [10.99, 5.99, 3.99, 6.59];
+const filteredArray = prices3.filter( (price, index, prices) => { // will return new array
+    return price > 6;
+});
+
+// with shorter arrow func:
+const filteredArray2 = prices3.filter( p => p > 6 );
