@@ -1,5 +1,5 @@
-const person = {
-    name: 'Max',
+let person = {
+    'first name': 'Max',
     age: 30,
     hobbies: ['Sports', 'Cooking'],
     greet: function() {
@@ -15,3 +15,6 @@ person.isAdmin = true;
 
 // remove property from object
 delete person.age;
+
+// square bracket and special key property
+console.log(person['first name']);
