@@ -1,5 +1,13 @@
+class Product {
+  title = "DEFAULT";
+  imageUrl;
+  description;
+  price;
+}
+
 const productList = {
   products: [
+    // new Product()
     {
       title: "A pillow",
       imageUrl:
@@ -33,7 +41,7 @@ const productList = {
                 </div>
             </div>
         `;
-        prodList.append(prodEl);
+      prodList.append(prodEl);
     }
     renderHook.append(prodList);
   },
