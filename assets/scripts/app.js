@@ -3,25 +3,29 @@ class Product {
   imageUrl;
   description;
   price;
+
+  constructor(title, image, description, price) {
+    this.title = title;
+    this.imageUrl = image;
+    this.description = description;
+    this.price = price;
+  }
 }
 
 const productList = {
   products: [
-    // new Product()
-    {
-      title: "A pillow",
-      imageUrl:
-        "http://t1.gstatic.com/licensed-image?q=tbn:ANd9GcQcEUTMw8X0u8y26nPsuVOapVCjjpQAjHrD_63w7OE0gjcjUFJURZhl-3mfHGQi0hY0fq0LGI5A8WJ798jT7Gw",
-      price: 19.99,
-      description: "A soft pillow!",
-    },
-    {
-      title: "A carpet",
-      imageUrl:
-        "https://sklep.hard-pc.pl/galerie/p/podkladka-krux-space-max-carp_48721.webp",
-      price: 89.99,
-      description: "A carpet which you might like or not",
-    },
+    new Product(
+      "A pillow",
+      "http://t1.gstatic.com/licensed-image?q=tbn:ANd9GcQcEUTMw8X0u8y26nPsuVOapVCjjpQAjHrD_63w7OE0gjcjUFJURZhl-3mfHGQi0hY0fq0LGI5A8WJ798jT7Gw",
+      "A soft pillow",
+      19.99
+    ),
+    new Product(
+      "A carpet",
+      "https://sklep.hard-pc.pl/galerie/p/podkladka-krux-space-max-carp_48721.webp",
+      "A carpet which you might like or not",
+      89.99
+    ),
   ],
   render() {
     const renderHook = document.getElementById("app");
