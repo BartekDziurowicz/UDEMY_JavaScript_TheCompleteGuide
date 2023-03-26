@@ -20,8 +20,8 @@ class ElementAttribute {
 }
 
 class Component {
-  constructor(renderHook) {
-    this.hookId = renderHook;
+  constructor(renderHookId) {
+    this.hookId = renderHookId;
   }
 
   createRootElement(tag, cssClasses, attributes) {
@@ -29,7 +29,7 @@ class Component {
     if (cssClasses) {
       rootElement.className = cssClasses;
     }
-    if (attributes && attributes.lenght > 0) {
+    if (attributes && attributes.length > 0) {
       for (const attr of attributes) {
         rootElement.setAttribute(attr.name, attr.value);
       }
@@ -73,8 +73,9 @@ class ShoppingCart extends Component {
   }
 }
 
-class ProductItem {
-  constructor(product) {
+class ProductItem extends Component {
+  constructor(product, renderHookId) {
+    super(renderHookId);
     this.product = product;
   }
 
@@ -86,8 +87,7 @@ class ProductItem {
   }
 
   render() {
-    const prodEl = document.createElement("li");
-    prodEl.className = "product-item";
+    const prodEl = this.createRootElement('li', 'product-item');
     prodEl.innerHTML = `
             <div>
                 <img src="${this.product.imageUrl}" alt="${this.product.title}">
@@ -101,11 +101,15 @@ class ProductItem {
         `;
     const addCartButton = prodEl.querySelector("button");
     addCartButton.addEventListener("click", this.addToCart.bind(this));
-    return prodEl;
   }
 }
 
-class ProductList {
+class ProductList extends Component {
+
+  constructor(renderHookId) {
+    super(renderHookId);
+  }
+
   products = [
     new Product(
       "A pillow",
@@ -121,29 +125,21 @@ class ProductList {
     ),
   ];
 
-  constructor() {}
-
   render() {
-    const prodList = document.createElement("ul");
-    prodList.className = "product-list";
+    this.createRootElement('ul', 'product-list', [new ElementAttribute('id', 'prod-list')]);
     for (const prod of this.products) {
-      const productItem = new ProductItem(prod);
-      // const prodEl = productItem.render();
-      prodList.append(productItem.render());
+      const productItem = new ProductItem(prod, 'prod-list');
+      productItem.render();
     }
-    return prodList;
   }
 }
 
 class Shop {
   render() {
-    const renderHook = document.getElementById("app");
     this.cart = new ShoppingCart('app');
     this.cart.render();
-    const producList = new ProductList();
-    const prodListEl = producList.render();
-
-    renderHook.append(prodListEl);
+    const productList = new ProductList('app');
+    productList.render();
   }
 }
 
