@@ -27,3 +27,16 @@ form.addEventListener('submit', event => {
     event.preventDefault(); // prevent default behaviour, now page is not reloaded after submit button is clicked
     console.log(event);
 })
+
+const div = document.querySelector('div');
+
+div.addEventListener('click', event => {
+    console.log('CLICKED DIV');
+    console.log(event);
+})
+
+button.addEventListener('click', event => { ////any other listeners for the same type of event on some ancesor alements will not be triggered
+    event.stopPropagation
+    console.log('CLICKED BUTTON');
+    console.log(event);
+})
