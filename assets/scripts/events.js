@@ -4,8 +4,9 @@ const button = document.querySelector('button');
 //     alert('alert');
 // }
 
-const buttonClickHandler = () => {
-    alert('button was clicked');
+const buttonClickHandler = event => {
+    event.target.disabled = true;
+    console.log(event);
 }
 
 const anotherButtonClickHandler = () => {
