@@ -43,3 +43,26 @@ function greetUser() {
 userName = 'Manuel';
 
 greetUser(); // Hi Manuel will be logged, as is global function and in fn value wasnt copied but access to variable, so latest value has been taken
+
+
+// recursion - function that called function itself
+function powerOf(x, n) {
+    let result = 1;
+
+    for (let i=0; i<n; i++) {
+        result *= result;
+    }
+
+    return result;
+}
+
+function powerOfRec(x, n){
+    if (n === 1) {
+        return x;
+    }
+    return x * powerOfRec(x, n-1);
+
+    // one line :)
+    // return n === 1 ? x : x * powerOfRec(x, n-1);
+}
+
