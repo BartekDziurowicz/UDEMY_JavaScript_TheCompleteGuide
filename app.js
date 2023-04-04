@@ -31,3 +31,15 @@ const calculateIncomeTaxAmount = createTaxCalculator(0.25);
 
 console.log(calculateVatAmount(100));
 console.log(calculateIncomeTaxAmount(200));
+
+
+// closure function - all fn in javascript are closure
+let userName = 'Max';
+
+function greetUser() {
+    console.log('Hi ' + userName);
+}
+
+userName = 'Manuel';
+
+greetUser(); // Hi Manuel will be logged, as is global function and in fn value wasnt copied but access to variable, so latest value has been taken
