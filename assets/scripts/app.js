@@ -17,15 +17,15 @@ function sendHttpRequest(method, url) {
 }
 
 function fetchPosts() {
-    const responseData = sentHttpRequest('GET', 'https://jsonplaceholder.typicode.com/posts').then(
-        responseData => {
-            const listOfPosts = xhr.response;
-            for (const post of listOfPosts) {
-              const postEl = document.importNode(postTemplate.content, true);
-              postEl.querySelector("h2").textContent = post.title.toUpperCase();
-              postEl.querySelector("p").textContent = post.body;
-              listElement.append(postEl);
-            }
-        }
-    )
+  const responseData = sentHttpRequest(
+    "GET",
+    "https://jsonplaceholder.typicode.com/posts"
+  );
+  const listOfPosts = xhr.response;
+  for (const post of listOfPosts) {
+    const postEl = document.importNode(postTemplate.content, true);
+    postEl.querySelector("h2").textContent = post.title.toUpperCase();
+    postEl.querySelector("p").textContent = post.body;
+    listElement.append(postEl);
+  }
 }
