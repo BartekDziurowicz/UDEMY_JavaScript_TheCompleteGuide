@@ -13,11 +13,11 @@ function sendHttpRequest(method, url) {
     };
     xhr.send();
   });
-  return primise;
+  return promise;
 }
 
 async function fetchPosts() {
-  const responseData = await sentHttpRequest(
+  const responseData = await sendHttpRequest(
     "GET",
     "https://jsonplaceholder.typicode.com/posts"
   );
