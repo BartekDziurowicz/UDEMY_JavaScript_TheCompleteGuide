@@ -75,6 +75,12 @@ async function createPost(title, content) {
     userId: userId
   }
 
+  // You an use formData object instead of json data:
+  const fd = new FormData();
+  fd.append('title', title);
+  fd.append('body', content);
+  fd.append('userId', userId);
+
   sendHttpRequest('POST', "https://jsonplaceholder.typicode.com/posts", post);
 }
 
