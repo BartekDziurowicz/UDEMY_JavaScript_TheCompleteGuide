@@ -1,6 +1,6 @@
-import { Component } from './Component.js';
+import { Cmp } from './Component.js'; // when U are using default export You can import file wit any name You want
 
-export class Tooltip extends Component {
+export class Tooltip extends Cmp {
     constructor(closeNotifierFunction, text, hostElementId) {
       super(hostElementId);
       this.closeNotifier = closeNotifierFunction;

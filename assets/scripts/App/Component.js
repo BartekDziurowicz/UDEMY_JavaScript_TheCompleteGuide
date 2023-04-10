@@ -1,4 +1,4 @@
-export class Component {
+export default class { //default export will ignore the name anyway so it was removed
     constructor(hostElementId, insertBefore = false) {
       if (hostElementId) {
         this.hostElement = document.getElementById(hostElementId);
