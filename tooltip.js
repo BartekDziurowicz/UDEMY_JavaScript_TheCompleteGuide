@@ -4,8 +4,7 @@ class Tooltip extends HTMLElement {
         this._tooltipContainer;
         this._tooltipText = 'Some dummy...';
         this.attachShadow({ mode: 'open' });
-        const template = document.querySelector('#tooltip-template');
-        this.shadowRoot.appendChild(template.textContent.cloneNode(true));
+        tjis.shadowRoot.innerHTML = '<slot></slot><span> (?)</span>';
     }
 
     connectedCallback() {
